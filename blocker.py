@@ -23,7 +23,6 @@ def unblock():
     global allSites
     allDomains = [domains for site in allSites for domains in site]
     with open(r"./details/blocked.txt","r+") as file:
-        file.seek(0)
         content = file.readlines()
         file.seek(0)
         for line in content:
