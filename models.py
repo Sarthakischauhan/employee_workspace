@@ -83,6 +83,3 @@ def write_session_details(**kwargs):
             elif kwargs.get("reset",False) == True:
                 data = {}    
                 pickle.dump(data,file)
-
-# change_status([True,False])
-# write_session_details()
