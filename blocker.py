@@ -9,7 +9,7 @@ allSites = [(f"www.{domain}.com",f"{domain}.com",f"https://www.{domain}.com") fo
 def block():
     global allSites,DOMAINS
     '''writing websites in the file'''
-    with open(r"./details/blocked.txt","r+") as file:
+    with open(PATH,"r+") as file:
         content = file.read()
         for site in allSites:
             for allDomains in site:
@@ -22,7 +22,7 @@ def block():
 def unblock():
     global allSites
     allDomains = [domains for site in allSites for domains in site]
-    with open(r"./details/blocked.txt","r+") as file:
+    with open(PATH,"r+") as file:
         content = file.readlines()
         file.seek(0)
         for line in content:

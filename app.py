@@ -35,6 +35,7 @@ def app_start():
 
 
 def login_handler():
+    '''This function handles the authentication of a user'''
     app_start()
     if status:
         homepage()
@@ -88,6 +89,7 @@ def login_handler():
 
 
 def homepage():
+    '''Landing Page Of The App Afer The Login'''
     if status:
         def redirect_logout():
             window.destroy()
@@ -159,6 +161,7 @@ def homepage():
         window.mainloop()
 
 def start_session():
+    '''This function will start the session when start session button is clicked'''
     if status:
         global session
         '''Changing the status in the file and the program'''
@@ -198,6 +201,7 @@ def start_session():
         raise ValueError("Cuurent Status is not logged in")    
 
 def bugView(**kwargs):
+    '''Display bugs to the employee and allows to add more bugs'''
     global session
     if session:
         mybug_query = f"SELECT content,raised_by FROM bugs WHERE raised_by='{current_user.code}';"
@@ -263,6 +267,7 @@ def bugView(**kwargs):
 
 
 def logout():
+    '''Handles the logout of a particular employee'''
     if status:
         change_status([False,False])
         write_session_details(reset=True)

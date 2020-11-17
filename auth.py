@@ -20,10 +20,6 @@ class User:
     def __repr__(self):
         return f"User({self.name},{self.code},{self.dept})" 
 
-    @property    
-    def is_authenticated(self):
-        return self.authenticated
-
 def login(name,passw):
     name,password=name.get(),passw.get()
 
