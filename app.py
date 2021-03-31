@@ -58,7 +58,7 @@ def login_handler():
         '''Setting up the window'''
         window=tk.Tk()
         window.configure(background="#23272A")
-        window.iconbitmap("./img/doughnut.ico")
+		#window.iconbitmap("./img/doughnut.ico")
         window.geometry("450x650")
         root_path=os.path.dirname(os.path.abspath(__file__))
         window.title("Login")
@@ -71,7 +71,7 @@ def login_handler():
         nam_entry=tk.Entry(window,bd=1,width=38,font=(16))
         pass_entry=tk.Entry(window,bd=1,width=38,font=(16),show="*")
         '''image label'''
-        img=Image.open(root_path+"\\img\\teacher_avatar.jpg")
+        img=Image.open(root_path+"//img//teacher_avatar.jpg")
         img=ImageTk.PhotoImage(img)
         img_label=tk.Label(window,image=img)
         '''button'''
@@ -118,7 +118,7 @@ def homepage():
         window=tk.Tk()
         window.geometry("1200x780+450+126")        
         window.title("Home | AllSafe")
-        window.iconbitmap("./img/doughnut.ico")
+		#window.iconbitmap("./img/doughnut.ico")
         window.resizable(False,False)
         '''Image'''
         img=Image.open("./img/sarthak.jpg")
@@ -185,7 +185,7 @@ def start_session():
         window.geometry("500x220")        
         window.title("Session | AllSafe ")
         window.configure(background="#2C2F33")
-        window.iconbitmap("./img/doughnut.ico")
+		#window.iconbitmap("./img/doughnut.ico")
         window.protocol("WM_DELETE_WINDOW",closeWindow)
         window.resizable(False,False)
 
@@ -271,9 +271,6 @@ def logout():
     if status:
         change_status([False,False])
         write_session_details(reset=True)
-
-
-
 
 if __name__=="__main__":
     login_handler()

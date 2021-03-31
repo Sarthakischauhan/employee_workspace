@@ -1,11 +1,13 @@
 import mysql.connector
 from mysql.connector import Error 
+import os 
 
+passwd = os.environ.get("DB_PASS")
 try :
     connection = mysql.connector.connect(
         host="localhost",
-        user="root",
-        passwd="",
+        username="sarthak",
+        password=passwd,
         database="school_project"
     )
 except Error as e:
@@ -70,6 +72,4 @@ def push_bugs(bug,user_code,connection=connection):
         print("Bug Pushed successfully")
     except Error as e:
         print(f"Error {e} occurred")
-
-
 
